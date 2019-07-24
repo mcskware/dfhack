@@ -10,6 +10,7 @@ build*/
 nix
 buntu
 build/VC2010
+build/win64/VC2017
 
 #except for the real one
 !build/
