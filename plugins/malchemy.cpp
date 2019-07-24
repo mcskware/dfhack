@@ -85,9 +85,23 @@ namespace malchemy {
             out.print("Reaction: %s\n", reaction->name);
         }
 
-        FOR_ENUM_ITEMS(item_type, it)
+        //FOR_ENUM_ITEMS(item_type, it)
+        //{
+        //    out.print("Item: %s\n", ENUM_KEY_STR(item_type, it));
+        //}
+
+        out.print("---------- modding ----------");
+
+        auto react = world->raws.reactions.reactions.begin();
+        ++react;
+        ++react;
+        df::reaction* makeWoodenBed = (*react);
+        makeWoodenBed->name = "make an awesome wood bed";
+
+        for (auto it = world->raws.reactions.reactions.begin(); it != world->raws.reactions.reactions.end(); ++it)
         {
-            out.print("Item: %s\n", ENUM_KEY_STR(item_type, it));
+            df::reaction* reaction = (*it);
+            out.print("Reaction: %s\n", reaction->name);
         }
     }
 
